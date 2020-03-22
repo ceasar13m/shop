@@ -1,0 +1,69 @@
+h1, p {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 15vh;
+    align-items: center;
+    border-bottom: 1px rgba(196, 196, 196, 0.43) solid;
+}
+
+.logo {
+    color: #ff0000;
+    text-transform: uppercase;
+    font-family: 'Baloo 2', cursive;
+
+}
+
+.info {
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tel {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.tel img {
+    width: 10px;
+    margin-right: 5px;
+}
+
+.cart {
+    width: 150px;
+    height: 40px;
+    display: flex;
+
+
+}
+
+.cartInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartImg {
+
+    padding-top: 5px;
+margin: 0 auto;
+
+}
+.cartImg img {
+    width: 30px;
+
+}
+
+.total {
+    color: darkgrey;
+}

@@ -1,0 +1,110 @@
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.item {
+    position: relative;
+    margin: 2px;
+    z-index: 10;
+    width: 230px;
+    height: 400px;
+
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+    border: 1px #adadad solid;
+
+}
+
+.item:hover {
+    z-index: 11;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.75);
+}
+
+.itemImg {
+    margin: 10px;
+}
+
+
+.itemName {
+    position: absolute;
+    top: 200px;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.itemName a {
+    text-decoration: none;
+    color: black;
+}
+
+.itemName a:hover {
+    color: red;
+}
+
+.venderCode {
+    position: absolute;
+    bottom: 95px;
+    width: 230px;
+
+    text-align: center;
+    color: rgba(173, 173, 173, 0.78);
+    font-size: 13px;
+}
+
+.itemPrice {
+    font-size: 17px;
+    position: absolute;
+    width: 230px;
+    bottom: 70px;
+
+}
+
+.itemButton {
+    width: 230px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+
+.incart button {
+    display: inline-block;
+    width: 90px;
+    height: 35px;
+    background-color: red;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 13px;
+
+    transition: background-color 0.3s linear;
+
+}
+
+.incart button:hover {
+    cursor: pointer;
+    background-color: #b80000;
+}
+
+.cart button {
+    display: none;
+    width: 90px;
+    height: 35px;
+    background-color: #30df00;
+    border: none;
+    outline: none;
+    color: whitesmoke;
+    border-radius: 5px;
+    font-size: 13px;
+
+    transition: background-color 0.3s linear;
+
+}
+
+.cart button:hover {
+    cursor: pointer;
+    background-color: #259600;
+}
