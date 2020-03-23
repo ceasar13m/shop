@@ -3,29 +3,11 @@ import css from './BasketItem.module.css';
 
 class BasketItem extends Component {
 
-
-    dellProduct() {
-        let name = this.props.name;
-        let price = this.props.price;
-        this.props.dellProductOnCart(name, price)
-    }
-
-    countIncr() {
-        let id = this.props.id;
-        this.props.countIncr(id)
-    }
-
-    countDecr() {
-        let id = this.props.id
-        this.props.countDecr(id)
-    }
-
-
     render() {
 
-        //Итого
+        // Итого
         let total = 0;
-        total = this.props.count * this.props.price;
+        total = this.props.good.count * this.props.good.price;
 
 
         return (
@@ -38,19 +20,19 @@ class BasketItem extends Component {
                         <th>Итого</th>
                     </tr>
                     <tr>
-                        <td><img src={this.props.icon} alt="" width='70px' height='50px'/></td>
-                        <td>{this.props.name}</td>
-                        <td>{(this.props.price).toLocaleString('ru')} &#x20BD;</td>
+                        <td><img src={this.props.good.icon} alt="" width='70px' height='50px'/></td>
+                        <td>{this.props.good.name}</td>
+                        <td>{(this.props.good.price).toLocaleString('ru')} &#x20BD;</td>
                         <td>
-                            <button onClick={this.countDecr.bind(this)}>-</button>
-                            {this.props.count}
-                            <button onClick={this.countIncr.bind(this)}>+</button>
+                            <button onClick={() => {this.props.store.countDecr(this.props.good)}}>-</button>
+                            {this.props.good.count}
+                            <button onClick={() => {this.props.store.countIncr(this.props.good)}}>+</button>
                         </td>
                         <td>{(total).toLocaleString('ru')} &#x20BD;</td>
                     </tr>
                 </table>
                 <div>
-                    <button onClick={this.dellProduct.bind(this)}>Убрать</button>
+                    <button onClick={() => {this.props.store.dellProductOnCart(this.props.good)}}>Убрать</button>
                 </div>
             </div>
 

@@ -3,19 +3,33 @@ h1, p {
 }
 
 .header {
+    position: fixed;
+    z-index: 1000;
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 15vh;
     align-items: center;
+    background-color: #e8e8e8;
     border-bottom: 1px rgba(196, 196, 196, 0.43) solid;
 }
 
-.logo {
+
+.navLink {
+    text-decoration: none;
     color: #ff0000;
     text-transform: uppercase;
     font-family: 'Baloo 2', cursive;
+}
 
+.navLinkCart {
+    text-decoration: none;
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+.navLinkCart:hover {
+    color: black;
 }
 
 .info {

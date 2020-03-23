@@ -1,16 +1,30 @@
 import React, {Component} from "react";
 import css from './Header.module.css';
+import {NavLink} from 'react-router-dom';
 
 class Header extends Component {
+
+
     render() {
+
+        let total = 0;
+        let arr = this.props.store.goodState.cart;
+
+        let cartSum = () => {
+            for (let i = 0; i < arr.length; i++) {
+                total += arr[i].price * arr[i].count
+            }
+        };
+        cartSum();
+
         return (
             <div className={css.header}>
                 <div className={css.logo}>
-                   <h1>BledHuid</h1>
+                    <NavLink className={css.navLink} to="/"><h1>BLEDHUID</h1></NavLink>
                 </div>
                 <div className={css.info}>
                     Интернет магазин <br/>
-                    электронной техники
+                    электронной техники jhvghv
                 </div>
                 <div className={css.container}>
                     <div className={css.tel}>
@@ -22,8 +36,8 @@ class Header extends Component {
                             <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v2.png" alt=""/>
                         </div>
                         <div className={css.cartInfo}>
-                            <p>Корзина</p>
-                            <p className={css.total}>12 980 Р</p>
+                            <NavLink className={css.navLinkCart} to="/cart">Корзина</NavLink>
+                            <p className={css.total}>{total} Р</p>
                         </div>
                     </div>
                 </div>
