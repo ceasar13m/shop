@@ -1,10 +1,13 @@
 import React, {Component} from "react";
 import css from './item.module.css'
+import {NavLink} from "react-router-dom";
 
 class Item extends Component {
 
 
     render() {
+        let styleAddButton = this.props.product.button ? {display: 'block'} : {display: 'none'};
+        let styleCartButton = this.props.product.button ? {display: 'none'} : {display: 'block'};
 
         return (
             <div className={css.item}>
@@ -21,11 +24,11 @@ class Item extends Component {
                     <h4>{(this.props.product.price).toLocaleString('ru')} &#x20BD;/шт </h4>
                 </div>
                 <div className={css.itemButton}>
-                    <div className={css.incart}>
+                    <div style={styleAddButton} className={css.incart}>
                         <button onClick={()  => {this.props.store.addProductOnCart(this.props.product)}}>В корзину</button>
                     </div>
-                    <div className={css.cart}>
-                        <button href="/23">В корзине</button>
+                    <div style={styleCartButton} className={css.cart}>
+                        <NavLink to="/cart"><button>&#10003;В корзине</button></NavLink>
                     </div>
                 </div>
             </div>

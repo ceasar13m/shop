@@ -22,6 +22,12 @@ class App extends Component {
         })
     }
 
+    onButtonChanged(newButtonState){
+        this.setState({
+            ...this.state,
+            products: newButtonState.products,
+        })
+    }
 
     render() {
         return (

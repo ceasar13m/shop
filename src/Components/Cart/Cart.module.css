@@ -1,0 +1,81 @@
+.cart {
+    padding: 17vh 30px 0 30px;
+
+}
+
+.intro {
+    padding-left: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.totalName {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.cartButtons {
+    display: flex;
+}
+
+.checkoutButton button {
+    width: 150px;
+    height: 35px;
+    border: 1px red solid;
+    border-radius: 3px;
+    font-size: 16px;
+    color: red;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+.checkoutButton {
+    width: 200px;
+}
+
+.checkoutButton button:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
+
+.checkoutButton button:focus {
+    outline: none;
+}
+
+.catalogButton button {
+    width: 160px;
+    height: 35px;
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    font-size: 15px;
+    border: none;
+    transition: background-color 0.3s linear;
+}
+
+.catalogButton button:hover {
+    cursor: pointer;
+    background-color: #9e0000;
+}
+
+.catalogButton button:focus {
+    outline: none;
+}

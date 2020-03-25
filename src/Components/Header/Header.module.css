@@ -24,12 +24,11 @@ h1, p {
 
 .navLinkCart {
     text-decoration: none;
-    color: #ff0000;
-    text-transform: uppercase;
+    color: black;
 }
 
 .navLinkCart:hover {
-    color: black;
+    color: red;
 }
 
 .info {
@@ -55,11 +54,10 @@ h1, p {
 }
 
 .cart {
-    width: 150px;
+    width: 170px;
     height: 40px;
     display: flex;
-
-
+    align-items: center;
 }
 
 .cartInfo {
@@ -68,14 +66,28 @@ h1, p {
 }
 
 .cartImg {
-
-    padding-top: 5px;
-margin: 0 auto;
+    position: relative;
+    margin: 10px;
+    padding: 0 10px;
 
 }
+
 .cartImg img {
     width: 30px;
 
+}
+
+.countProducts {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px #e8e8e8 solid;
+    width: 17px;
+    height: 17px;
+    font-size: 13px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    color: white;
 }
 
 .total {

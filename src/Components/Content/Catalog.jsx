@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import css from './content.module.css'
+import css from './Catalog.module.css'
 import Item from "./Item";
-import BasketItem from "../Cart/BasketItem";
 
 
 class Catalog extends Component {

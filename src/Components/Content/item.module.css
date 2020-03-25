@@ -70,7 +70,6 @@ h1, h2, h3, h4 {
 
 
 .incart button {
-    display: inline-block;
     width: 90px;
     height: 35px;
     background-color: red;
@@ -90,10 +89,9 @@ h1, h2, h3, h4 {
 }
 
 .cart button {
-    display: none;
     width: 90px;
     height: 35px;
-    background-color: #30df00;
+    background-color: #4fad00;
     border: none;
     outline: none;
     color: whitesmoke;
@@ -106,5 +104,5 @@ h1, h2, h3, h4 {
 
 .cart button:hover {
     cursor: pointer;
-    background-color: #259600;
+    background-color: #31e200;
 }

@@ -1,11 +1,18 @@
 import React, {Component} from "react";
 import css from './Header.module.css';
 import {NavLink} from 'react-router-dom';
+import cartImg from "./Img/cart.png"
 
 class Header extends Component {
 
 
     render() {
+
+
+        let cartState = {backgroundColor: '#9f9f9f'}
+        if(this.props.store.goodState.cart.length != 0) {
+            cartState = {backgroundColor: 'red'}
+        }
 
         let total = 0;
         let arr = this.props.store.goodState.cart;
@@ -24,20 +31,23 @@ class Header extends Component {
                 </div>
                 <div className={css.info}>
                     Интернет магазин <br/>
-                    электронной техники jhvghv
+                    электронной техники
                 </div>
                 <div className={css.container}>
                     <div className={css.tel}>
                         <img src="https://zurmarket.ru/bitrix/templates/aspro_next/images/svg/Phone_black.svg" alt=""/>
-                        +7 (843) 240-65-10
+                        8 (800) 355-35-35
                     </div>
                     <div className={css.cart}>
                         <div className={css.cartImg}>
-                            <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v2.png" alt=""/>
+                            <NavLink to="/cart"><img src={cartImg} alt=""/></NavLink>
+                            <div style={cartState} className={css.countProducts}>
+                                {this.props.store.goodState.cart.length}
+                            </div>
                         </div>
                         <div className={css.cartInfo}>
                             <NavLink className={css.navLinkCart} to="/cart">Корзина</NavLink>
-                            <p className={css.total}>{total} Р</p>
+                            <p className={css.total}>{total.toLocaleString('ru')} &#x20BD;</p>
                         </div>
                     </div>
                 </div>

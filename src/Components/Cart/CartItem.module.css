@@ -1,0 +1,103 @@
+h5, h4 {
+    margin: 0;
+}
+.item {
+    position: relative;
+    display: flex;
+    padding: 20px 30px;
+    margin: 10px;
+    max-width: 1400px;
+    border: 1px #c6c6c6 solid;
+}
+
+.itemImg {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.itemName {
+    width: 600px;
+}
+
+.itemPrice {
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+    font-weight: 700;
+}
+
+.itemPrice p {
+    color: #d2d2d2;
+    font-weight: normal;
+    font-size: 13px;
+    padding-top: 13px;
+}
+
+.countBlock p {
+    color: #d2d2d2;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 2px;
+    text-align: center;
+}
+
+.itemCount {
+    display: flex;
+    justify-content: center;
+}
+
+.count {
+    width: 30px;
+    height: 35px;
+    background-color: #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemCount button {
+    width: 30px;
+    height: 35px;
+    border: none;
+    background-color: #d1d1d1;
+}
+
+.itemCount button:focus {
+    outline: none;
+    border: none;
+}
+
+.itemCount button:hover {
+    cursor: pointer;
+}
+
+
+.itemTotal {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    padding-top: 7px;
+    font-weight: 700;
+}
+
+.itemDellButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.itemDellButton button {
+    border: none;
+    font-size: 20px;
+    color: #9e9e9e;
+}
+
+.itemDellButton button:hover {
+    cursor: pointer;
+}
+
+.itemDellButton button:focus {
+    outline: none;
+}
