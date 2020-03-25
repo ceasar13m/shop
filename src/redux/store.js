@@ -75,18 +75,7 @@ class Store {
                     button: true
                 }
             ],
-            cart: [
-                {
-                    id: 2,
-                    name: 'Наушники Apple AirPods Pro',
-                    price: 20480,
-                    icon: 'https://zurmarket.ru/upload/resize_cache/iblock/548/170_170_1/orig1.jpg',
-                    count: 1
-                }
-            ],
-            button: false
-
-
+            cart: []
         }
     }
 
