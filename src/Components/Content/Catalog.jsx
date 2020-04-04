@@ -4,24 +4,21 @@ import Item from "./Item";
 
 
 class Catalog extends Component {
-
     render() {
-
+        let products = [];
+        for (let [key, value] of this.props.products) {
+            products.push(value)
+        }
         return (
             <div>
                 <div className={css.row}>
                     <h3>BLEDHUID - любая техника и даже больше</h3>
                 </div>
                 <div className={css.container}>
-                    {this.props.products.map(product => <Item product={product} store={this.props.store}/>)}
+                    {products.map(product => <Item product={product} store={this.props.store}/>)}
                 </div>
             </div>
-
-
         )
     }
-
 }
-
-
 export default Catalog;

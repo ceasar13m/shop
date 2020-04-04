@@ -28,7 +28,7 @@ class Global extends Component{
                             Подробнее
                         </button>
                         <div>
-
+                            {localStorage.getItem(2)}
                         </div>
                     </div>
                 </div>

@@ -7,19 +7,22 @@ class Header extends Component {
 
 
     render() {
-
-
+        //Меняет цвет кол-ва товаров в шапке, в зависимости от наличия товара в корзине
         let cartState = {backgroundColor: '#9f9f9f'}
-        if(this.props.store.goodState.cart.length != 0) {
+        if(this.props.store.goodState.cart.size !== 0) {
             cartState = {backgroundColor: 'red'}
         }
 
-        let total = 0;
-        let arr = this.props.store.goodState.cart;
+        let good = [];
+        for (let [key, value] of this.props.store.goodState.cart) {
+            good.push(value);
+        }
 
+        //итоговая сумма товаров в корзине
+        let total = 0;
         let cartSum = () => {
-            for (let i = 0; i < arr.length; i++) {
-                total += arr[i].price * arr[i].count
+            for (let i = 0; i < good.length; i++) {
+                total += good[i].price * good[i].count
             }
         };
         cartSum();
@@ -42,7 +45,7 @@ class Header extends Component {
                         <div className={css.cartImg}>
                             <NavLink to="/cart"><img src={cartImg} alt=""/></NavLink>
                             <div style={cartState} className={css.countProducts}>
-                                {this.props.store.goodState.cart.length}
+                                {this.props.store.goodState.cart.size}
                             </div>
                         </div>
                         <div className={css.cartInfo}>

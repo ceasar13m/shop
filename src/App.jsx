@@ -5,6 +5,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Cart from "./Components/Cart/Cart";
 import Global from "./Components/Global/Clobal";
 import Header from "./Components/Header/Header";
+import Order from "./Components/Order/Order";
 
 class App extends Component {
 
@@ -22,7 +23,7 @@ class App extends Component {
         })
     }
 
-    onButtonChanged(newButtonState){
+    onButtonChanged(newButtonState) {
         this.setState({
             ...this.state,
             products: newButtonState.products,
@@ -37,6 +38,7 @@ class App extends Component {
                                                             store={this.store}/>}/>
                 <Route path='/cart' render={() => <Cart cart={this.state.cart}
                                                         store={this.store}/>}/>
+                <Route path='/order' render={() => <Order />}/>
             </BrowserRouter>
         );
     }

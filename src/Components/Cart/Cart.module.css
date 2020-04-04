@@ -1,10 +1,14 @@
 .cart {
-    padding: 17vh 30px 0 30px;
+    padding-top: 17vh;
 
 }
 
 .intro {
-    padding-left: 10px;
+    padding-left: 40px;
+}
+
+.cartElements {
+    padding: 0 30px;
 }
 
 .container {
@@ -78,4 +82,37 @@
 
 .catalogButton button:focus {
     outline: none;
+}
+
+/*Когда корзина пуста*/
+
+.noGood {
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.noImg img {
+    margin: 30px;
+    width: 200px;
+}
+
+.noTitle {
+    font-size: 20px;
+    color: #adadad;
+}
+
+.noSubTitle {
+    margin: 30px;
+    font-weight: 700;
+}
+
+.noSubTitle a {
+    color: black;
+    text-decoration: none;
+}
+
+.noSubTitle a:hover {
+    color: red;
+    text-decoration: underline;
 }
