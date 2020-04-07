@@ -6,7 +6,9 @@ class Store {
         this.goodState = {
             products: new Map(),
             cart: new Map(),
-            test: []
+            test: [],
+            errorWindow: false,
+            successWindow: false
         };
         this.getProducts();
         this.getCartItems();
@@ -63,7 +65,7 @@ class Store {
         });
     }
 
-    //Загружает товары корзины c LocalStorage
+    //Загружает товары в корзину c LocalStorage
     getCartItems() {
         this.goodState.cart = new Map();
         let keys = Object.keys(localStorage);
@@ -76,9 +78,87 @@ class Store {
         }
     }
 
+    addData(name, email, tel, address, comment, cart) {
+        let data = [];
+        if (name.current.value === ""
+            || email.current.value === ""
+            || tel.current.value === ""
+            || address.current.value === "") {
+            this.goodState = {
+                ...this.goodState,
+                errorWindow: true
+            };
+            this.App.onErrorWindowChanged({
+                errorWindow: this.goodState.errorWindow
+            });
+        } else {
+            data.push({
+                user: {
+                    name: name.current.value,
+                    email: email.current.value,
+                    tel: tel.current.value,
+                    address: address.current.value,
+                    comment: comment.current.value
+                },
+                products: cart
+            });
+            this.goodState = {
+                ...this.goodState,
+                successWindow: true
+            };
+            this.App.onSuccessWindowChanged({
+                successWindow: this.goodState.errorWindow
+            });
+            let dataJSON = JSON.stringify(data);
+        }
+    }
+
+    closeErrorWindow() {
+        this.goodState = {
+            ...this.goodState,
+            errorWindow: false
+        };
+        this.App.onErrorWindowChanged({
+            errorWindow: this.goodState.errorWindow
+        });
+    }
+
+    closeSuccessWindow() {
+        this.goodState = {
+            ...this.goodState,
+            successWindow: false
+        };
+        this.App.onSuccessWindowChanged({
+            successWindow: this.goodState.successWindow
+        });
+        this.clearLocalStorage()
+    }
+
+    clearLocalStorage() {
+        localStorage.clear();
+        this.goodState.cart.clear();
+        this.App.onCartChanged({
+            cart: this.goodState.cart
+        });
+        let products = [];
+        for (let [key, value] of this.goodState.products) {
+            products.push(value);
+        }
+        for (let i = 0; i < products.length ; i++) {
+            if (products[i].button === false) {
+                products[i].button = true;
+                this.goodState.products.set(products[i].id, products[i])
+            }
+        }
+        this.App.onProductsChanged({
+            products: this.goodState.products
+        })
+
+    }
+
     //Загружает продукты с JSON файла
     getProducts() {
-        for (let i = 0; i < productsJSON.length ; i++) {
+        for (let i = 0; i < productsJSON.length; i++) {
             this.goodState.products.set(productsJSON[i].id, productsJSON[i])
         }
     }

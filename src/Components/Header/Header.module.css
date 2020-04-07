@@ -14,12 +14,12 @@ h1, p {
     border-bottom: 1px rgba(196, 196, 196, 0.43) solid;
 }
 
-
 .navLink {
     text-decoration: none;
     color: #ff0000;
     text-transform: uppercase;
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
 }
 
 .navLinkCart {

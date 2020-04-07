@@ -30,7 +30,7 @@ class Header extends Component {
         return (
             <div className={css.header}>
                 <div className={css.logo}>
-                    <NavLink className={css.navLink} to="/"><h1>BLEDHUID</h1></NavLink>
+                    <NavLink className={css.navLink} to="/">ЯхшыМаркет</NavLink>
                 </div>
                 <div className={css.info}>
                     Интернет магазин <br/>

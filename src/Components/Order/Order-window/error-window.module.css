@@ -1,0 +1,64 @@
+.layer {
+    z-index: 1002;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(67, 67, 67, 0.16);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window {
+    width: 400px;
+    height: 150px;
+    background-color: white;
+    z-index: 1001;
+    border-radius: 10px;
+}
+
+.intro {
+    height: 60px;
+    background-color: red;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    position: relative;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 700;
+    color: white;
+    font-size: 25px;
+}
+
+.close {
+    width: 12px;
+    height: 12px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 7px;
+    color: black;
+    transition: color 0.3s linear;
+}
+
+.close:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.text {
+    width: 400px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.text span {
+    color: red;
+}
+

@@ -12,7 +12,7 @@ class Catalog extends Component {
         return (
             <div>
                 <div className={css.row}>
-                    <h3>BLEDHUID - любая техника и даже больше</h3>
+                    <h3><span>ЯхшыМаркет</span> - любая техника и даже больше</h3>
                 </div>
                 <div className={css.container}>
                     {products.map(product => <Item product={product} store={this.props.store}/>)}

@@ -10,6 +10,12 @@
     letter-spacing: 3px;
 }
 
+.row span {
+    text-transform: uppercase;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: red;
+}
 .container {
     margin: 0 auto;
     width: 1150px;

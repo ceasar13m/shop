@@ -23,11 +23,23 @@ class App extends Component {
         })
     }
 
-    onButtonChanged(newButtonState) {
+    onProductsChanged(newProductState) {
         this.setState({
             ...this.state,
-            products: newButtonState.products,
+            products: newProductState.products,
         })
+    }
+
+    onErrorWindowChanged(errorWindowNewState) {
+        this.setState({
+            errorWindow: errorWindowNewState.errorWindow,
+        });
+    }
+
+    onSuccessWindowChanged(successWindowNewState) {
+        this.setState({
+            successWindow: successWindowNewState.successWindow,
+        });
     }
 
     render() {
@@ -38,7 +50,7 @@ class App extends Component {
                                                             store={this.store}/>}/>
                 <Route path='/cart' render={() => <Cart cart={this.state.cart}
                                                         store={this.store}/>}/>
-                <Route path='/order' render={() => <Order />}/>
+                <Route path='/order' render={() => <Order store={this.store}/>}/>
             </BrowserRouter>
         );
     }
